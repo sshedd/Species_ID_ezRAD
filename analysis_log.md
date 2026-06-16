@@ -222,6 +222,8 @@ was used for exploratory genetic analysis.
 
 PCA was generated from genome-wide SNPs.
 
+![PCA Plot](PCA_cutsites.png)
+
 Samples were colored by NlaIV cut-site category. All samples with 3 cutsites grouped together  
 
 
