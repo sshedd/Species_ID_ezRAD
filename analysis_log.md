@@ -268,6 +268,8 @@ done
 
 ---
 
+## Maddie and I realized a bunch of samples had no reads as they didn't map the variable regions and were kicked out - we were only analyzing 254 samples. With the mitogenome, all samples are present and we do have some Pdam snps
+
 # Current Work
 
 A species-specific mitogenome reference has been obtained.
