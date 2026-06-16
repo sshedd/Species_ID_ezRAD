@@ -236,6 +236,36 @@ Conclusions: There isn't any Pdam in my samples but there are definitely a few o
 
 Plan: I will rerun the mapping but with the mitogenome and see if we can fix the issue of having alot of N's. Hopefully that'll give us an idea of what those species are with less missing bp. I will also pull out the samples that have SNPs or Ns at the 2nd cutsite. Then with the confident set, run Freebayes on dDocent w/ just those bams. 
 
+I used this code to get summary statistics after getting consensus sequences for all of the mitogenome - this code makes a table that tells me the percentage of samples that covered the variable region Erika sent
+
+```
+echo "Sample,Mean_Coverage,Covered_Bases,Region_Length,Percent_Covered" > erika_region_coverage_from_mitogenome.csv
+
+REGION="REFERENCE_NAME:7398-8227"
+
+for bam in *.bam
+do
+    sample=${bam%.bam}
+
+    samtools depth -aa -r "$REGION" "$bam" | \
+    awk -v sample="$sample" '
+    {
+        sum += $3
+        total += 1
+        if ($3 > 0) covered += 1
+    }
+    END {
+        if (total > 0) {
+            mean = sum / total
+            pct = 100 * covered / total
+            print sample "," mean "," covered "," total "," pct
+        } else {
+            print sample ",0,0,0,0"
+        }
+    }' >> erika_region_coverage_from_mitogenome.csv
+done
+```
+
 ---
 
 # Current Work
