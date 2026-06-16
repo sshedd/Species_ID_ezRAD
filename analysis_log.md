@@ -226,22 +226,15 @@ PCA was generated from genome-wide SNPs.
 
 Samples were colored by NlaIV cut-site category. All samples with 3 cutsites grouped together  
 
-
-Interpretation:
-
-Restriction-site counts do not appear to correspond strongly with genome-wide genetic structure.
-
 ---
 
-# Conclusions
+# Geneious notes
 
-Current evidence suggests:
+Maddie and I examiend the consensus sequences on geneious, and aligned the sequences to both the Pacuta and Pdam regions. We saw that hardly any samples at the diagnostic Pdam SNP at 480 bp along the 829 bp long fragment. 
 
-1. Reads preferentially map to the *P. acuta*-like marker sequence.
-2. No Tsp45I diagnostic sites characteristic of *P. damicornis* were detected.
-3. NlaIV cut-site counts are strongly influenced by marker recovery and missing data.
-4. Genome-wide PCA does not support clear separation based on NlaIV cut-site counts.
-5. Direct interrogation of diagnostic SNP positions is likely more informative than restriction-site counting.
+Conclusions: There isn't any Pdam in my samples but there are definitely a few other species as they have SNPs at those cut sites. 
+
+Plan: I will rerun the mapping but with the mitogenome and see if we can fix the issue of having alot of N's. Hopefully that'll give us an idea of what those species are with less missing bp. I will also pull out the samples that have SNPs or Ns at the 2nd cutsite. Then with the confident set, run Freebayes on dDocent w/ just those bams. 
 
 ---
 
@@ -249,4 +242,4 @@ Current evidence suggests:
 
 A species-specific mitogenome reference has been obtained.
 
-Reads have been mapped to the mitogenome reference and mitochondrial consensus sequences will be generated for downstream phylogenetic and species-identification analyses.
+Reads have been mapped to the mitogenome reference and mitochondrial consensus sequences will be generated using samtools. 
